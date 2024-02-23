@@ -1,14 +1,23 @@
 import { useState } from "react";
 import "./reusables.css";
-import { FiMenu, FiPackage, FiInbox } from "react-icons/fi";
-import { FaGithub, FaSearch, FaGreaterThan } from "react-icons/fa";
-import { BsBook, BsPlusLg } from "react-icons/bs";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { RiGitRepositoryLine } from "react-icons/ri";
-import { GoProject, GoGitPullRequest } from "react-icons/go";
-import { AiOutlineStar } from "react-icons/ai";
-import { VscIssues } from "react-icons/vsc";
 import { User } from "../types";
+import rocket from "../assets/images/rocketdab.png";
+import {
+	FiMenu,
+	FiPackage,
+	FiInbox,
+	FaGithub,
+	FaSearch,
+	FaGreaterThan,
+	BsBook,
+	BsPlusLg,
+	IoMdArrowDropdown,
+	RiGitRepositoryLine,
+	GoProject,
+	GoGitPullRequest,
+	AiOutlineStar,
+	VscIssues,
+} from "../assets/icons/icons";
 
 const Navbar = () => {
 	const [tab, setTab] = useState<number>(2);
@@ -51,7 +60,8 @@ const Navbar = () => {
 					</div>
 					<div className="pic">
 						<img
-							src={userData ? userData.avatar_url : ""}
+							src={userData ? userData.avatar_url : rocket}
+							// src={rocket}
 							alt="profile-pic"
 						/>
 					</div>
@@ -80,7 +90,7 @@ const Navbar = () => {
 							}
 						/>
 						<p>Repositories</p>
-						<span>2</span>
+						<span>{userData?.public_repos || 0}</span>
 					</div>
 					<div
 						className={tab === 3 ? "tab_select" : "tab"}
@@ -114,7 +124,7 @@ const Navbar = () => {
 							}
 						/>
 						<p>Stars</p>
-						<span>5</span>
+						<span>18</span>
 					</div>
 				</div>
 			</div>

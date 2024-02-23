@@ -560,6 +560,7 @@
 .repo-tab .repo_left .title h2 {
 	color: blueviolet;
 	font-size: 16px;
+	font-weight: 500;
 }
 
 .repo-tab .repo_left .title p {
@@ -567,13 +568,13 @@
 	border-radius: 10px;
 	font-size: 10px;
 	padding: 2px 8px;
-	color: darkgrey;
+	color: grey;
 	font-weight: 600;
 }
 
 .repo-tab .repo_left .description {
 	font-size: 13px;
-	color: darkgray;
+	color: grey;
 	font-weight: 300;
 }
 
@@ -589,11 +590,25 @@
 	gap: 5px;
 }
 
-.repo-tab .repo_left .details .program .color {
+.repo-tab .repo_left .details .program .color_js {
 	width: 15px;
 	height: 15px;
 	border-radius: 50%;
 	background: yellow;
+}
+
+.repo-tab .repo_left .details .program .color_ts {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: blue;
+}
+
+.repo-tab .repo_left .details .program .color_others {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background: brown;
 }
 
 .repo-tab .repo_left .details .program .language {
@@ -641,4 +656,34 @@
 	color: lightgray;
 	border: 1px solid lightgray;
 	height: 1px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 950px) {
+	.top-right .search {
+		display: none;
+		align-items: center;
+		border: 1px solid rgb(210, 208, 208);
+		padding: 8px 10px;
+		gap: 8px;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.search_bar_btns {
+		display: flex;
+		gap: 2px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.search_bar_btns {
+		display: none;
+		gap: 2px;
+	}
+
+	.search_bar .home_search_input {
+		width: 100%;
+	}
 }

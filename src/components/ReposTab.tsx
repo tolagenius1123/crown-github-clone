@@ -19,7 +19,15 @@ const ReposTab = ({ repo }: ReposTabProps) => {
 					<p className="description">{repo.description}</p>
 					<div className="details">
 						<div className="program">
-							<div className="color"></div>
+							<div
+								className={
+									(repo.language === "JavaScript" &&
+										"color_js") ||
+									(repo.language === "TypeScript" &&
+										"color_ts") ||
+									"color_others"
+								}
+							></div>
 							<div className="language">{repo.language}</div>
 						</div>
 						<div className="last_updated">

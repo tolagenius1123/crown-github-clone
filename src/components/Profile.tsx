@@ -1,11 +1,15 @@
-import { BsPeople } from "react-icons/bs";
-import { BiBuildingHouse, BiLink } from "react-icons/bi";
-import { GoLocation } from "react-icons/go";
-import { BsClock } from "react-icons/bs";
-import "./reusables.css";
 import { useEffect, useState } from "react";
+import "./reusables.css";
 import { getProfile } from "../redux/features/profileSlice";
 import { User } from "../types";
+import rocket from "../assets/images/rocketdab.png";
+import {
+	BiBuildingHouse,
+	BiLink,
+	GoLocation,
+	BsClock,
+	BsPeople,
+} from "../assets/icons/icons";
 
 const Profile = () => {
 	const [isEditing, setIsEditing] = useState<boolean>(false);
@@ -103,7 +107,11 @@ const Profile = () => {
 	return (
 		<div className="profile">
 			<div className="profile-pic">
-				<img src={profile?.avatar_url} alt="profile_picture" />
+				<img
+					src={profile?.avatar_url ? profile.avatar_url : rocket}
+					// src={rocket}
+					alt="profile_picture"
+				/>
 			</div>
 			{isEditing ? (
 				<form onSubmit={handleSubmit}>
