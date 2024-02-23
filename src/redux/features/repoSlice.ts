@@ -104,10 +104,7 @@ const initialState: Repository = {
 };
 
 export const getRepos = async () => {
-	const response = await axios.get(
-		`https://api.github.com/users/tolagenius1123/repos`
-	);
-	console.log(response.data);
+	const response = await axios.get(import.meta.env.VITE_API_REPO_URL);
 	return response.data;
 };
 

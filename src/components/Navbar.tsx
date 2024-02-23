@@ -50,7 +50,10 @@ const Navbar = () => {
 						<FiInbox className="inbox" />
 					</div>
 					<div className="pic">
-						<img src={userData.avatar_url} alt="profile-pic" />
+						<img
+							src={userData ? userData.avatar_url : ""}
+							alt="profile-pic"
+						/>
 					</div>
 				</div>
 			</div>

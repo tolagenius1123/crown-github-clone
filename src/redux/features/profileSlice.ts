@@ -38,9 +38,7 @@ const initialState: User = {
 };
 
 export const getProfile = async () => {
-	const response = await axios.get(
-		"https://api.github.com/users/tolagenius1123"
-	);
+	const response = await axios.get(import.meta.env.VITE_API_PROFILE_URL);
 	return response.data;
 };
 
